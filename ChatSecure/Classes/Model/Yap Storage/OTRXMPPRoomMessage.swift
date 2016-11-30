@@ -107,7 +107,7 @@ extension OTRXMPPRoomMessage:OTRMessageProtocol {
 extension OTRXMPPRoomMessage:JSQMessageData {
     //MARK: JSQMessageData Protocol methods
     
-    public func senderId() -> String! {
+    public func senderId() -> String {
         var result:String? = nil
         OTRDatabaseManager.sharedInstance().readWriteDatabaseConnection.readWithBlock { (transaction) -> Void in
             if (self.state.incoming()) {
@@ -119,10 +119,10 @@ extension OTRXMPPRoomMessage:JSQMessageData {
                 result = thread.accountUniqueId
             }
         }
-        return result
+        return result!
     }
     
-    public func senderDisplayName() -> String! {
+    public func senderDisplayName() -> String {
         return self.displayName ?? ""
     }
     
@@ -143,8 +143,8 @@ extension OTRXMPPRoomMessage:JSQMessageData {
         return UInt(self.date().timeIntervalSince1970)
     }
     
-    public func text() -> String? {
-        return self.messageText
+    public func text() -> String {
+        return self.messageText ?? ""
     }
     
     public func messageRead() -> Bool {

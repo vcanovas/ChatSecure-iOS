@@ -588,7 +588,7 @@ NSString *const OTRMessageStateKey = @"OTREncryptionManagerMessageStateKey";
     
     OTRIncomingMessage *newMessage = [((OTRIncomingMessage *)transfer.tag) copy];
     newMessage.messageSecurityInfo = [[OTRMessageEncryptionInfo alloc] initWithOTRFingerprint:fingerprint.fingerprint];
-    newMessage.text = nil;
+    newMessage.text = @"";
     
     NSRange imageRange = [transfer.mimeType rangeOfString:@"image"];
     NSRange audioRange = [transfer.mimeType rangeOfString:@"audio"];

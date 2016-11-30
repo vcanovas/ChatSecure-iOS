@@ -221,8 +221,9 @@ public class MessageQueueHandler:NSObject, YapTaskQueueHandler, OTRXMPPMessageSt
         //Ensure protocol is connected or if not and autologin then connnect
         if (accountProtocol.connectionStatus() == .Connected) {
             
+            let text = message.text
             //Make sure we have some text to send
-            guard let text = message.text else {
+            if text.characters.count == 0 {
                 return
             }
             

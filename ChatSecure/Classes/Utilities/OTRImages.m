@@ -855,11 +855,11 @@ NSString *const OTRDuckDuckGoImageKey = @"OTRMicrophoneImageKey";
 + (UIImage *)avatarImageWithUsername:(NSString *)username
 {
     NSString *initials = [username otr_stringInitialsWithMaxCharacters:2];
-    JSQMessagesAvatarImage *jsqImage = [JSQMessagesAvatarImageFactory avatarImageWithUserInitials:initials
+    JSQMessagesAvatarImageFactory *factory = [[JSQMessagesAvatarImageFactory alloc] initWithDiameter:60];
+    JSQMessagesAvatarImage *jsqImage = [factory avatarImageWithUserInitials:initials
                                                                                   backgroundColor:[UIColor colorWithWhite:0.85f alpha:1.0f]
                                                                                         textColor:[UIColor colorWithWhite:0.60f alpha:1.0f]
-                                                                                             font:[UIFont systemFontOfSize:30.0f]
-                                                                                         diameter:60];
+                                                                                             font:[UIFont systemFontOfSize:30.0f]];
     return jsqImage.avatarImage;
 }
 

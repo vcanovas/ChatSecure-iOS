@@ -80,6 +80,9 @@ typedef NS_ENUM(int, OTRDropDownType) {
 @property (nonatomic, strong) OTRAttachmentPicker *attachmentPicker;
 @property (nonatomic, strong) OTRAudioPlaybackController *audioPlaybackController;
 
+@property (nonatomic, strong) NSString *senderId;
+@property (nonatomic, strong) NSString *senderDisplayName;
+
 @end
 
 @implementation OTRMessagesViewController
@@ -113,6 +116,16 @@ typedef NS_ENUM(int, OTRDropDownType) {
     
     self.incomingBubbleImage = [bubbleImageFactory incomingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleLightGrayColor]];
     
+    JSQMessagesTimestampFormatter *timestampFormatter = [JSQMessagesTimestampFormatter sharedFormatter];
+    UIFont *dateFont = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
+    NSMutableDictionary *dateTextAttributes = timestampFormatter.dateTextAttributes.mutableCopy;
+    [dateTextAttributes setObject:dateFont forKey:NSFontAttributeName];
+    timestampFormatter.dateTextAttributes = dateTextAttributes;
+    NSMutableDictionary *timeTextAttributes = timestampFormatter.timeTextAttributes.mutableCopy;
+    [timeTextAttributes setObject:dateFont forKey:NSFontAttributeName];
+    timestampFormatter.timeTextAttributes = timeTextAttributes;
+    
+    
     // Profile Info Button
     [self setupInfoButton];
     
@@ -124,7 +137,7 @@ typedef NS_ENUM(int, OTRDropDownType) {
     [self refreshTitleView];
     
     ////// Send Button //////
-    self.sendButton = [JSQMessagesToolbarButtonFactory defaultSendButtonItem];
+    self.sendButton = [[[JSQMessagesToolbarButtonFactory alloc] init]defaultSendButtonItem];
     
     ////// Attachment Button //////
     self.inputToolbar.contentView.leftBarButtonItem = nil;
@@ -1291,7 +1304,7 @@ typedef NS_ENUM(int, OTRDropDownType) {
     
     if (avatarImage) {
         NSUInteger diameter = MIN(avatarImage.size.width, avatarImage.size.height);
-        return [JSQMessagesAvatarImageFactory avatarImageWithImage:avatarImage diameter:diameter];
+        return [[[JSQMessagesAvatarImageFactory alloc] initWithDiameter:diameter] avatarImageWithImage:avatarImage];
     }
     return nil;
 }

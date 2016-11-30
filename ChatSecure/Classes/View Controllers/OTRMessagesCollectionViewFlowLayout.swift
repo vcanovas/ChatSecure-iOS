@@ -18,7 +18,7 @@ public class OTRMessagesCollectionViewFlowLayout:JSQMessagesCollectionViewFlowLa
     
     public weak var sizeDelegate:OTRMessagesCollectionViewFlowLayoutSizeProtocol?
     
-    override public func messageBubbleSizeForItemAtIndexPath(indexPath: NSIndexPath!) -> CGSize {
+    override public func messageBubbleSizeForItemAtIndexPath(indexPath: NSIndexPath) -> CGSize {
         guard let delegate = self.sizeDelegate where !delegate.hasBubbleSizeForCellAtIndexPath(indexPath) else {
             return super.messageBubbleSizeForItemAtIndexPath(indexPath)
         }

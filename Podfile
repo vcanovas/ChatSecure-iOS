@@ -30,9 +30,6 @@ abstract_target 'ChatSecureCorePods' do
   pod 'YapDatabase/SQLCipher', '~> 2.9'
   pod 'Mantle', '~> 2.0'
   pod 'Navajo', '~> 0.0'
-  # wating on 8.0 https://github.com/jessesquires/JSQMessagesViewController/pull/840
-  # using for in meantime
-  # pod 'JSQMessagesViewController', '~> 8.0'
   pod 'BBlock', '~> 1.2'
   pod 'JVFloatLabeledTextField', '~> 1.0'
   pod 'TTTAttributedLabel', '~> 2.0'
@@ -66,7 +63,8 @@ abstract_target 'ChatSecureCorePods' do
   pod 'gtm-oauth2', :podspec => 'Podspecs/gtm-oauth2.podspec'
 
   # Forks
-  pod 'JSQMessagesViewController', :git => 'https://github.com/ChatSecure/JSQMessagesViewController', :branch => '7.2.0-send_button'
+  # Pin to a commit of JSQMessagesViewController 8.0
+  pod 'JSQMessagesViewController', :git => 'https://github.com/jessesquires/JSQMessagesViewController.git', :commit => '26124006945138245e89b8505e65a69d3f794609'
 
   # Use this until able to push proper podspec that depends on 2.9
   pod 'YapTaskQueue/SQLCipher', '~> 0.1.6'

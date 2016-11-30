@@ -31,12 +31,12 @@ public extension UIApplication {
             let threadName = threadOwner.threadName()
             
             var text = "\(threadName)"
-            if let msgTxt = message.text() {
+            let msgTxt = message.text()
+            if msgTxt.characters.count > 0 {
                 if let rawMessageString = msgTxt.stringByConvertingHTMLToPlainText() {
                     text += ": \(rawMessageString)"
                 }
             }
-            
             
             self.showLocalNotificationFor(threadOwner, text: text, unreadCount: Int(unreadCount))
         }

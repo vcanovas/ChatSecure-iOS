@@ -57,7 +57,7 @@
     [self.keyboardButton setTitle:[NSString fa_stringForFontAwesomeIcon:FAKeyboardO]
                            forState:UIControlStateNormal];
     
-    self.knockButton = [JSQMessagesToolbarButtonFactory defaultSendButtonItem];
+    self.knockButton = [[[JSQMessagesToolbarButtonFactory alloc] init] defaultSendButtonItem];
     NSString *title = KNOCK_STRING;
     CGFloat maxHeight = 32.0f;
     [self.knockButton setTitle:title forState:UIControlStateNormal];

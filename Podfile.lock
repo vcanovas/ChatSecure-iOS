@@ -54,9 +54,7 @@ PODS:
   - IOCipher/GCDWebServer (0.1.0):
     - GCDWebServer/CocoaLumberjack
     - IOCipher/common
-  - JSQMessagesViewController (7.2.0):
-    - JSQSystemSoundPlayer (~> 2.0.1)
-  - JSQSystemSoundPlayer (2.0.1)
+  - JSQMessagesViewController (7.3.4)
   - JTSImageViewController (1.5.1)
   - JVFloatLabeledTextField (1.1.1)
   - KissXML (5.1.2):
@@ -405,7 +403,7 @@ DEPENDENCIES:
   - gtm-http-fetcher (from `Podspecs/gtm-http-fetcher.podspec`)
   - gtm-oauth2 (from `Podspecs/gtm-oauth2.podspec`)
   - IOCipher/GCDWebServer (from `Submodules/IOCipher/IOCipher.podspec`)
-  - JSQMessagesViewController (from `https://github.com/ChatSecure/JSQMessagesViewController`, branch `7.2.0-send_button`)
+  - JSQMessagesViewController (from `https://github.com/jessesquires/JSQMessagesViewController.git`, commit `26124006945138245e89b8505e65a69d3f794609`)
   - JTSImageViewController (~> 1.4)
   - JVFloatLabeledTextField (~> 1.0)
   - KSCrash (~> 1.10.1)
@@ -447,8 +445,8 @@ EXTERNAL SOURCES:
   IOCipher:
     :path: Submodules/IOCipher/IOCipher.podspec
   JSQMessagesViewController:
-    :branch: 7.2.0-send_button
-    :git: https://github.com/ChatSecure/JSQMessagesViewController
+    :commit: 26124006945138245e89b8505e65a69d3f794609
+    :git: https://github.com/jessesquires/JSQMessagesViewController.git
   libsqlfs:
     :branch: podspec-fix
     :git: https://github.com/ChatSecure/libsqlfs.git
@@ -467,8 +465,8 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   JSQMessagesViewController:
-    :commit: 4bae8b303c4f7e3c34571a4c898bd1f11ecc65a5
-    :git: https://github.com/ChatSecure/JSQMessagesViewController
+    :commit: 26124006945138245e89b8505e65a69d3f794609
+    :git: https://github.com/jessesquires/JSQMessagesViewController.git
   libsqlfs:
     :commit: 317d21a1e43e28396a62a462a8213a5f33678c2c
     :git: https://github.com/ChatSecure/libsqlfs.git
@@ -488,8 +486,7 @@ SPEC CHECKSUMS:
   gtm-http-fetcher: 4e7de79fc9e774b291eae66a240f17b3a5277ec7
   gtm-oauth2: b31c9d7c82f773f7b7094cbb7da8dc7b5968ce16
   IOCipher: 4cb4cd9a5998f69f4578a51501987dc5951ff092
-  JSQMessagesViewController: 73cab48aa92fc2d512f3b6724f3425cc47a19eb5
-  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
+  JSQMessagesViewController: c11b9e77372ab72c45c67311f6da7342e32df1e8
   JTSImageViewController: 1f8ce1cc93dab0d0af8e53badeea7528560cfec9
   JVFloatLabeledTextField: 0e5524b097f102036214dd8279edc8ecf08b5e18
   KissXML: 246c842586bb77110e04fb88e19376d96245c856
@@ -521,6 +518,6 @@ SPEC CHECKSUMS:
   YapTaskQueue: 4142a372ea5971deddafe7c797193b01348a66ef
   ZXingObjC: bf15b3814f7a105b6d99f47da2333c93a063650a
 
-PODFILE CHECKSUM: e27e68f928913e00235516c876963914dc76ad44
+PODFILE CHECKSUM: adfbd827488871d9e3ccb2c0b291fa47b03b348d
 
 COCOAPODS: 1.2.0.beta.1

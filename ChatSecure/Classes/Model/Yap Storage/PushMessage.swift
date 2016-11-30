@@ -64,8 +64,8 @@ extension PushMessage: OTRMessageProtocol {
         return self.pushDate
     }
     
-    public func text() -> String? {
-        return nil
+    public func text() -> String {
+        return ""
     }
     
     public func remoteMessageId() -> String? {
@@ -107,12 +107,12 @@ extension PushMessage {
 }
 
 extension PushMessage: JSQMessageData {
-    public func senderId() -> String! {
+    public func senderId() -> String {
         let account = self.account()
         return account?.uniqueId ?? ""
     }
     
-    public func senderDisplayName() -> String! {
+    public func senderDisplayName() -> String {
         let account = self.account()
         let displayName = (account?.displayName ?? account?.username) ?? ""
         return displayName

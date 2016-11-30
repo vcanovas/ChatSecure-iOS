@@ -113,7 +113,8 @@
             UIImage *avatarImage = [roomOccupant avatarImage];
             if (avatarImage) {
                 NSUInteger diameter = MIN(avatarImage.size.width, avatarImage.size.height);
-                imageDataSource = [JSQMessagesAvatarImageFactory avatarImageWithImage:avatarImage diameter:diameter];
+                JSQMessagesAvatarImageFactory *factory = [[JSQMessagesAvatarImageFactory alloc] initWithDiameter:diameter];
+                imageDataSource = [factory avatarImageWithImage:avatarImage];
             }
         }
         

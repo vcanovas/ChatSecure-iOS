@@ -48,7 +48,7 @@ extern const struct OTRMessageAttributes {
 
 - (nonnull NSDate *)date;
 
-- (nullable NSString *)text;
+- (nonnull NSString *)text;
 
 - (nullable NSString *)remoteMessageId;
 
@@ -61,7 +61,7 @@ extern const struct OTRMessageAttributes {
 /** The date the message is created for outgoing messages and the date it is received for incoming messages*/
 @property (nonatomic, strong, nonnull) NSDate *date;
 
-@property (nonatomic, strong, nullable) NSString *text;
+@property (nonatomic, strong, nonnull) NSString *text;
 @property (nonatomic, strong, nonnull) NSString *messageId;
 @property (nonatomic, strong, nullable) NSError *error;
 

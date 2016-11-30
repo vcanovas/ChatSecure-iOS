@@ -444,7 +444,7 @@ extension OTROMEMOSignalCoordinator: OMEMOModuleDelegate {
                 guard let buddy = OTRBuddy.fetchBuddyWithUsername(fromJID.bare(), withAccountUniqueId: self.accountYapKey, transaction: transaction) else {
                     return
                 }
-                databaseMessage.text = messageString
+                databaseMessage.text = messageString ?? ""
                 databaseMessage.buddyUniqueId = buddy.uniqueId
                 
                 let deviceNumber = NSNumber(unsignedInt: senderDeviceId)
@@ -475,7 +475,7 @@ extension OTROMEMOSignalCoordinator: OMEMOModuleDelegate {
                 protocolManager.sendDeliveryReceiptForMessage(databaseMessage)
             })
             // Display local notification
-            if let _ = databaseMessage.text {
+            if databaseMessage.text.characters.count > 0 {
                 let messageCopy = databaseMessage.copy() as! OTRIncomingMessage
                 dispatch_async(dispatch_get_main_queue(), { 
                     UIApplication.sharedApplication().showLocalNotification(messageCopy)
