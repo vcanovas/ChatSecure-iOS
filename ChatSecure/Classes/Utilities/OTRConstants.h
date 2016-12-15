@@ -69,6 +69,8 @@ extern NSString *const kOTRNotificationThreadCollection;
 extern NSString *const OTRUserNotificationsChanged;
 
 extern NSString *const OTRUserNotificationsUNTextInputReply;
+extern NSString *const OTRUserNotificationsCategory;
+
 
 
 //NSUserDefaults

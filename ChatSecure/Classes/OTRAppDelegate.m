@@ -174,16 +174,25 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(batteryStateDidChange:) name:UIDeviceBatteryStateDidChangeNotification object:nil];
     [UIDevice currentDevice].batteryMonitoringEnabled = YES;
     [self batteryStateDidChange:nil];
-    
-    // Setup iOS 10+ in-app notifications
-    NSOperatingSystemVersion ios10version = {.majorVersion = 10, .minorVersion = 0, .patchVersion = 0};
-    if ([[NSProcessInfo processInfo] isOperatingSystemAtLeastVersion:ios10version]) {
-        [UNUserNotificationCenter currentNotificationCenter].delegate = self;
-    }
 
-    
+    [self setupUserNotificationCenter];
     
     return YES;
+}
+
+/** Setup iOS 10+ in-app notifications */
+- (void) setupUserNotificationCenter {
+    NSOperatingSystemVersion ios10version = {.majorVersion = 10, .minorVersion = 0, .patchVersion = 0};
+    if (![[NSProcessInfo processInfo] isOperatingSystemAtLeastVersion:ios10version]) {
+        return;
+    }
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    center.delegate = self;
+    
+    UNTextInputNotificationAction *replyAction = [UNTextInputNotificationAction actionWithIdentifier:OTRUserNotificationsUNTextInputReply title:NSLocalizedString(@"Reply", @"Respond to a push message") options:0 textInputButtonTitle:NSLocalizedString(@"Send", @"send button for replying to push") textInputPlaceholder:NSLocalizedString(@"Message", "placeholder for notification reply")];
+    UNNotificationCategory *category = [UNNotificationCategory categoryWithIdentifier:OTRUserNotificationsCategory actions:@[replyAction] intentIdentifiers:@[] options:0];
+    NSSet *categories = [NSSet setWithObject:category];
+    [center setNotificationCategories:categories];
 }
 
 - (void) setupCrashReporting {
@@ -482,11 +491,6 @@
     return NO;
 }
 
-- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
-    
-    
-}
-
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
     if ([url.scheme isEqualToString:@"xmpp"]) {
@@ -543,19 +547,23 @@
     }
 }
 
-- (void) enterThreadWithUserInfo:(NSDictionary*)userInfo {
+- (nullable id <OTRThreadOwner>) threadForUserInfo:(nonnull NSDictionary*)userInfo {
     NSString *threadKey = userInfo[kOTRNotificationThreadKey];
     NSString *threadCollection = userInfo[kOTRNotificationThreadCollection];
     NSParameterAssert(threadKey);
     NSParameterAssert(threadCollection);
-    if (!threadKey || !threadCollection) { return; }
+    if (!threadKey || !threadCollection) { return nil; }
     __block id <OTRThreadOwner> thread = nil;
     [[OTRDatabaseManager sharedInstance].readOnlyDatabaseConnection readWithBlock:^(YapDatabaseReadTransaction * _Nonnull transaction) {
         thread = [transaction objectForKey:threadKey inCollection:threadCollection];
     }];
-    if (thread) {
-        [self.splitViewCoordinator enterConversationWithThread:thread sender:self];
-    }
+    return thread;
+}
+
+- (void) enterThreadWithUserInfo:(NSDictionary*)userInfo {
+    id <OTRThreadOwner> thread = [self threadForUserInfo:userInfo];
+    if (!thread) { return; }
+    [self.splitViewCoordinator enterConversationWithThread:thread sender:self];
 }
 
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
@@ -600,8 +608,45 @@
 
 - (void) userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
     NSDictionary *userInfo = response.notification.request.content.userInfo;
-    [self enterThreadWithUserInfo:userInfo];
-    completionHandler();
+    if ([response.actionIdentifier isEqualToString:UNNotificationDefaultActionIdentifier]) {
+        [self enterThreadWithUserInfo:userInfo];
+        completionHandler();
+    } else if ([response.actionIdentifier isEqualToString:OTRUserNotificationsUNTextInputReply]) {
+        OTRXMPPBuddy *buddy = (OTRXMPPBuddy*)[self threadForUserInfo:userInfo];
+        if (!buddy || ![buddy isKindOfClass:[OTRXMPPBuddy class]]) {
+            completionHandler();
+            return;
+        }
+        UNTextInputNotificationResponse *textResponse = (UNTextInputNotificationResponse*)response;
+        NSString *replyText = textResponse.userText;
+        //1. Create new message database object
+        __block OTROutgoingMessage *message = [[OTROutgoingMessage alloc] init];
+        message.buddyUniqueId = buddy.uniqueId;
+        message.text = replyText;
+        
+        OTRMessageTransportSecurity bestMessageSecurity =
+        [[OTRDatabaseManager sharedInstance].readOnlyDatabaseConnection readWithBlock:^(YapDatabaseReadTransaction * _Nonnull transaction) {
+            
+        }];
+        message.messageSecurityInfo = [[OTRMessageEncryptionInfo alloc] initWithMessageSecurity:self.state.messageSecurity];
+        
+        //2. Create send message task
+        __block OTRYapMessageSendAction *sendingAction = [[OTRYapMessageSendAction alloc] initWithMessageKey:message.uniqueId messageCollection:[OTROutgoingMessage collection] buddyKey:message.threadId date:message.date];
+        
+        //3. save both to database
+        __weak __typeof__(self) weakSelf = self;
+        [self.readWriteDatabaseConnection asyncReadWriteWithBlock:^(YapDatabaseReadWriteTransaction * _Nonnull transaction) {
+            [message saveWithTransaction:transaction];
+            [sendingAction saveWithTransaction:transaction];
+            
+            //Update buddy
+            OTRBuddy *buddy = [[OTRBuddy fetchObjectWithUniqueID:threadKey transaction:transaction] copy];
+            buddy.composingMessageString = nil;
+            buddy.lastMessageDate = message.date;
+            [buddy saveWithTransaction:transaction];
+        }];
+
+    }
 }
 
 #pragma - mark Class Methods

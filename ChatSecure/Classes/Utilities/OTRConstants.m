@@ -62,6 +62,7 @@ NSString *const kOTRErrorDomain = @"com.chatsecure";
 
 
 NSString *const OTRUserNotificationsUNTextInputReply = @"OTRUserNotificationsUNTextInputReply";
+NSString *const OTRUserNotificationsCategory = @"OTRUserNotificationsCategory";
 NSString *const OTRUserNotificationsChanged = @"OTRUserNotificationsChanged";
 
 NSString *const OTRFailedRemoteNotificationRegistration = @"OTRFailedRemoteNotificationRegistration";

@@ -74,10 +74,7 @@ extern const struct OTRBuddyAttributes {
 - (nullable OTRAccount*)accountWithTransaction:(nonnull YapDatabaseReadTransaction *)transaction;
 - (void)updateLastMessageDateWithTransaction:(nonnull YapDatabaseReadTransaction *)transaction;
 
-- (void)bestTransportSecurityWithTransaction:(nonnull YapDatabaseReadTransaction *)transaction
-                             completionBlock:(void (^_Nonnull)(OTRMessageTransportSecurity))block
-                             completionQueue:(nonnull dispatch_queue_t)queue;
-
+- (OTRMessageTransportSecurity)bestTransportSecurityWithTransaction:(nonnull YapDatabaseReadTransaction *)transaction;
 
 + (nullable instancetype)fetchBuddyForUsername:(nonnull NSString *)username
                           accountName:(nonnull NSString *)accountName
