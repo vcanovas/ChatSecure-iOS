@@ -75,7 +75,10 @@ static NSUInteger kOTRMaxLoginAttempts = 5;
 }
 
 - (void) cancelButtonPressed:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController dismissViewControllerAnimated:NO completion:^{
+        
+    }];
+    //[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)loginButtonPressed:(id)sender

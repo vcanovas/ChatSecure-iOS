@@ -44,12 +44,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _tableDelegate = [[OTRWelcomeAccountTableViewDelegate alloc] init];
-    self.tableDelegate.welcomeAccountInfoArray = self.accountInfoArray;
-    self.tableView.delegate = self.tableDelegate;
-    self.tableView.dataSource = self.tableDelegate;
-    self.tableView.rowHeight = 80;
+    //_tableDelegate = [[OTRWelcomeAccountTableViewDelegate alloc] init];
+    //self.tableDelegate.welcomeAccountInfoArray = self.accountInfoArray;
+    //self.tableView.delegate = self.tableDelegate;
+    //self.tableView.dataSource = self.tableDelegate;
+    //self.tableView.rowHeight = 80;
     // Do any additional setup after loading the view.
+
+    __weak __typeof__(self) weakSelf = self;
+    __typeof__(self) strongSelf = weakSelf;
+    
+    OTRBaseLoginViewController *loginViewController = [[OTRBaseLoginViewController alloc] init];
+    loginViewController.form = [OTRXLFormCreator formForAccountType:OTRAccountTypeJabber createAccount:NO];
+    loginViewController.loginHandler = [[OTRXMPPLoginHandler alloc] init];
+    [strongSelf.navigationController pushViewController:loginViewController animated:YES];
+    
+    
+
+    
+    
+    
+    //asd
+
 }
 
 - (void)didReceiveMemoryWarning {
