@@ -91,34 +91,36 @@
     OTRSettingsGroup *securitySettingsGroup = [[OTRSettingsGroup alloc] initWithTitle:SECURITY_STRING() settings:securitySettings];
     [settingsGroups addObject:securitySettingsGroup];
     
-    OTRShareSetting * shareViewSetting = [[OTRShareSetting alloc] initWithTitle:SHARE_STRING() description:nil];
-    shareViewSetting.imageName = @"275-broadcast.png";
+    /*OTRShareSetting * shareViewSetting = [[OTRShareSetting alloc] initWithTitle:SHARE_STRING() description:nil];
+    shareViewSetting.imageName = @"275-broadcast.png";*/
     
     OTRLanguageSetting * languageSetting = [[OTRLanguageSetting alloc]initWithTitle:LANGUAGE_STRING() description:nil settingsKey:kOTRSettingKeyLanguage];
     languageSetting.imageName = @"globe.png";
     [newSettingsDictionary setObject:languageSetting forKey:kOTRSettingKeyLanguage];
     
     NSMutableArray *otherSettings = [NSMutableArray arrayWithCapacity:5];
-    [otherSettings addObjectsFromArray:@[languageSetting, shareViewSetting]];
+    [otherSettings addObjectsFromArray:@[languageSetting]];//, shareViewSetting]];
     
-    if ([OTRBranding paypalURL] && [OTRBranding bitcoinURL]) {
+    /*if ([OTRBranding paypalURL] && [OTRBranding bitcoinURL]) {
         OTRDonateSetting *donateSetting = [[OTRDonateSetting alloc] initWithTitle:DONATE_STRING() description:nil];
         donateSetting.imageName = @"29-heart.png";
         [otherSettings insertObject:donateSetting atIndex:1];
-    }
+    }*/
     
-    if ([OTRBranding userVoiceSite]) {
+    /*if ([OTRBranding userVoiceSite]) {
         OTRFeedbackSetting * feedbackViewSetting = [[OTRFeedbackSetting alloc] initWithTitle:SEND_FEEDBACK_STRING() description:nil];
         feedbackViewSetting.imageName = @"18-envelope.png";
         [otherSettings addObject:feedbackViewSetting];
-    }
+    }*/
 
+    /*
 #ifdef DEBUG
     OTRViewSetting *logsSetting = [[OTRViewSetting alloc] initWithTitle:@"View Logs"
                                                             description:nil
                                                     viewControllerClass:[OTRLogListViewController class]];
     [otherSettings addObject:logsSetting];
 #endif
+     */
     OTRSettingsGroup *otherGroup = [[OTRSettingsGroup alloc] initWithTitle:OTHER_STRING() settings:otherSettings];
     [settingsGroups addObject:otherGroup];
     _settingsDictionary = newSettingsDictionary;

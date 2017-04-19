@@ -96,7 +96,7 @@
     [DDLog addLogger:fileLogger withLevel:DDLogLevelAll];
 #endif
     
-    [self setupCrashReporting];
+    //[self setupCrashReporting];
     
     _theme = [[[self themeClass] alloc] init];
     [self.theme setupGlobalTheme];
@@ -160,9 +160,9 @@
         [PushController registerForPushNotifications];
     }
   
-    [Appirater setAppId:@"464200063"];
-    [Appirater setOpenInAppStore:NO];
-    [Appirater appLaunched:YES];
+    //[Appirater setAppId:@"464200063"];
+    //[Appirater setOpenInAppStore:NO];
+    //[Appirater appLaunched:YES];
     
     [self autoLoginFromBackground:NO];
     [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];

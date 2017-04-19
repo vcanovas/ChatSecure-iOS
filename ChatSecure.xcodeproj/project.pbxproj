@@ -2220,7 +2220,7 @@
 					};
 					6396AF991A169D54009F3E6C = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = 4T8JLQR6GR;
+						DevelopmentTeam = Q34MZ329VL;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -3043,7 +3043,7 @@
 				CODE_SIGN_ENTITLEMENTS = ChatSecure/ChatSecure.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Q34MZ329VL;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
@@ -3053,7 +3053,7 @@
 				INFOPLIST_FILE = ChatSecure/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.chrisballinger.ChatSecure;
+				PRODUCT_BUNDLE_IDENTIFIER = com.notspy.chat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3076,7 +3076,7 @@
 				CODE_SIGN_ENTITLEMENTS = ChatSecure/ChatSecure.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Q34MZ329VL;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
@@ -3086,7 +3086,7 @@
 				INFOPLIST_FILE = ChatSecure/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.chrisballinger.ChatSecure;
+				PRODUCT_BUNDLE_IDENTIFIER = com.notspy.chat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
