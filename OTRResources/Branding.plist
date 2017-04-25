@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>kOTRXMPPResource</key>
-	<string>chatsecure</string>
+	<string>notspy</string>
 	<key>kOTRFeedbackEmail</key>
-	<string>support@chatsecure.org</string>
+	<string>pedro@notspy.com</string>
 	<key>GOOGLE_APP_ID</key>
 	<string>719137339288.apps.googleusercontent.com</string>
 	<key>GOOGLE_APP_SCOPE</key>
@@ -23,9 +23,9 @@
 	<key>TransifexURL</key>
 	<string>https://www.transifex.com/projects/p/chatsecure</string>
 	<key>ProjectURL</key>
-	<string>https://chatsecure.org</string>
+	<string>https://www.notspy.com</string>
 	<key>ShareBaseURL</key>
-	<string>https://chatsecure.org/i/#</string>
+	<string>https://www.notspy.com/i/#</string>
 	<key>pushAPIURL</key>
 	<string>https://push.chatsecure.org/api/v1/</string>
 	<key>StagingPushAPIURL</key>

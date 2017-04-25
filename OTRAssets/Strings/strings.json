@@ -65,7 +65,7 @@
     },
     "CHATSECURE_PUSH_STRING": {
         "comment": "Title for ChatSecure Push (this probably doesnt need to be translated)",
-        "string": "ChatSecure Push"
+        "string": "NotSpy Push"
     },
     "CHATS_STRING": {
         "comment": "Title for chats view",
@@ -265,7 +265,7 @@
     },
     "MANAGE_CHATSECURE_PUSH_ACCOUNT_STRING": {
         "comment": "Title for button to manage ChatSecure Push account",
-        "string": "Manage ChatSecure Push account"
+        "string": "Manage NotSpy Push account"
     },
     "MESSAGE_COULD_NOT_BE_SENT_STRING": {
         "comment": "Explanation for why a message could not be sent.",

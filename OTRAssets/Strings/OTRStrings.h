@@ -48,7 +48,7 @@ FOUNDATION_EXPORT NSString* Basic_Setup_Hint();
 FOUNDATION_EXPORT NSString* Best_Available();
 /** "Cancel", Cancel an alert window */
 FOUNDATION_EXPORT NSString* CANCEL_STRING();
-/** "ChatSecure Push", Title for ChatSecure Push (this probably doesnt need to be translated) */
+/** "NotSpy Push", Title for ChatSecure Push (this probably doesnt need to be translated) */
 FOUNDATION_EXPORT NSString* CHATSECURE_PUSH_STRING();
 /** "Chats", Title for chats view */
 FOUNDATION_EXPORT NSString* CHATS_STRING();
@@ -188,7 +188,7 @@ FOUNDATION_EXPORT NSString* LOGIN_AUTOMATICALLY_STRING();
 FOUNDATION_EXPORT NSString* LOGIN_STRING();
 /** "Log Out", log out from account */
 FOUNDATION_EXPORT NSString* LOGOUT_STRING();
-/** "Manage ChatSecure Push account", Title for button to manage ChatSecure Push account */
+/** "Manage NotSpy Push account", Title for button to manage ChatSecure Push account */
 FOUNDATION_EXPORT NSString* MANAGE_CHATSECURE_PUSH_ACCOUNT_STRING();
 /** "Manage My Keys", Button to manage your OTR and OMEMO keys */
 FOUNDATION_EXPORT NSString* MANAGE_MY_KEYS();

@@ -48,8 +48,8 @@ NSString* Basic_Setup_Hint() { return [OTRLanguageManager translatedString:@"Thi
 NSString* Best_Available() { return [OTRLanguageManager translatedString:@"Best Available"]; }
 /** "Cancel", Cancel an alert window */
 NSString* CANCEL_STRING() { return [OTRLanguageManager translatedString:@"Cancel"]; }
-/** "ChatSecure Push", Title for ChatSecure Push (this probably doesnt need to be translated) */
-NSString* CHATSECURE_PUSH_STRING() { return [OTRLanguageManager translatedString:@"ChatSecure Push"]; }
+/** "NotSpy Push", Title for ChatSecure Push (this probably doesnt need to be translated) */
+NSString* CHATSECURE_PUSH_STRING() { return [OTRLanguageManager translatedString:@"NotSpy Push"]; }
 /** "Chats", Title for chats view */
 NSString* CHATS_STRING() { return [OTRLanguageManager translatedString:@"Chats"]; }
 /** "Chat", Title for chat view */
@@ -188,8 +188,8 @@ NSString* LOGIN_AUTOMATICALLY_STRING() { return [OTRLanguageManager translatedSt
 NSString* LOGIN_STRING() { return [OTRLanguageManager translatedString:@"Log In"]; }
 /** "Log Out", log out from account */
 NSString* LOGOUT_STRING() { return [OTRLanguageManager translatedString:@"Log Out"]; }
-/** "Manage ChatSecure Push account", Title for button to manage ChatSecure Push account */
-NSString* MANAGE_CHATSECURE_PUSH_ACCOUNT_STRING() { return [OTRLanguageManager translatedString:@"Manage ChatSecure Push account"]; }
+/** "Manage NotSpy Push account", Title for button to manage ChatSecure Push account */
+NSString* MANAGE_CHATSECURE_PUSH_ACCOUNT_STRING() { return [OTRLanguageManager translatedString:@"Manage NotSpy Push account"]; }
 /** "Manage My Keys", Button to manage your OTR and OMEMO keys */
 NSString* MANAGE_MY_KEYS() { return [OTRLanguageManager translatedString:@"Manage My Keys"]; }
 /** "The message could not be sent because this contact cannot receive your messages at this time. This could occur because they are offline, or if you are not authorized to send them messages.", Explanation for why a message could not be sent. */
