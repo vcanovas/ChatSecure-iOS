@@ -9,15 +9,15 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "YES"
+            buildForProfiling = "NO"
             buildForArchiving = "NO"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D9227C291BA7952100B5E1D0"
-               BuildableName = "ChatSecureCore.framework"
-               BlueprintName = "ChatSecureCore"
-               ReferencedContainer = "container:ChatSecure.xcodeproj">
+               BlueprintIdentifier = "6396AFB21A169D54009F3E6C"
+               BuildableName = "ChatSecureTests.xctest"
+               BlueprintName = "ChatSecureTests"
+               ReferencedContainer = "container:NotSpyChat.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,14 +28,24 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6396AFB21A169D54009F3E6C"
+               BuildableName = "ChatSecureTests.xctest"
+               BlueprintName = "ChatSecureTests"
+               ReferencedContainer = "container:NotSpyChat.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D9227C291BA7952100B5E1D0"
-            BuildableName = "ChatSecureCore.framework"
-            BlueprintName = "ChatSecureCore"
-            ReferencedContainer = "container:ChatSecure.xcodeproj">
+            BlueprintIdentifier = "6396AFB21A169D54009F3E6C"
+            BuildableName = "ChatSecureTests.xctest"
+            BlueprintName = "ChatSecureTests"
+            ReferencedContainer = "container:NotSpyChat.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -54,10 +64,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D9227C291BA7952100B5E1D0"
-            BuildableName = "ChatSecureCore.framework"
-            BlueprintName = "ChatSecureCore"
-            ReferencedContainer = "container:ChatSecure.xcodeproj">
+            BlueprintIdentifier = "6396AFB21A169D54009F3E6C"
+            BuildableName = "ChatSecureTests.xctest"
+            BlueprintName = "ChatSecureTests"
+            ReferencedContainer = "container:NotSpyChat.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -72,10 +82,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D9227C291BA7952100B5E1D0"
-            BuildableName = "ChatSecureCore.framework"
-            BlueprintName = "ChatSecureCore"
-            ReferencedContainer = "container:ChatSecure.xcodeproj">
+            BlueprintIdentifier = "6396AFB21A169D54009F3E6C"
+            BuildableName = "ChatSecureTests.xctest"
+            BlueprintName = "ChatSecureTests"
+            ReferencedContainer = "container:NotSpyChat.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

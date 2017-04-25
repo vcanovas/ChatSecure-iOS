@@ -85,9 +85,6 @@ static NSString *const kDefaultCellReuseIdentifier = @"kDefaultCellReuseIdentifi
     self.imageView.translatesAutoresizingMaskIntoConstraints = NO;
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     self.imageView.userInteractionEnabled = YES;
-    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapImageView:)];
-    [self.imageView addGestureRecognizer:tapGestureRecognizer];
-    
     [self.view addSubview:self.imageView];
 }
 
@@ -97,9 +94,7 @@ static NSString *const kDefaultCellReuseIdentifier = @"kDefaultCellReuseIdentifi
     CGFloat labelMargin = 10;
     self.headerLabel = [[TTTAttributedLabel alloc] initWithFrame:CGRectZero];
     NSString *chrisballingerString = @"@chrisballinger";
-    NSURL *chrisballingerURL = [NSURL URLWithString:@"https://github.com/chrisballinger"];
     NSString *davidchilesString = @"@davidchiles";
-    NSURL *davidChilesURL = [NSURL URLWithString:@"https://github.com/davidchiles"];
     NSString *headerText = [NSString stringWithFormat:@"%@ %@ & %@.", CREATED_BY_STRING(), chrisballingerString, davidchilesString];
     NSRange chrisRange = [headerText rangeOfString:chrisballingerString];
     NSRange davidRange = [headerText rangeOfString:davidchilesString];
@@ -131,12 +126,8 @@ static NSString *const kDefaultCellReuseIdentifier = @"kDefaultCellReuseIdentifi
     self.headerLabel.text = headerText;
     self.headerLabel.delegate = self;
     
-    //[self.headerLabel addLinkToURL:chrisballingerURL withRange:chrisRange];
-    //[self.headerLabel addLinkToURL:davidChilesURL withRange:davidRange];
-    
     self.socialButtonsView = [[OTRSocialButtonsView alloc] initWithFrame:CGRectZero];
     self.socialButtonsView.delegate = self;
-    self.socialButtonsView.alpha=0;
     [self.socialView addSubview:self.socialButtonsView];
     [self.socialView addSubview:self.headerLabel];
     [self.view addSubview:self.socialView];
@@ -162,9 +153,9 @@ static NSString *const kDefaultCellReuseIdentifier = @"kDefaultCellReuseIdentifi
         self.edgesForExtendedLayout = UIRectEdgeNone;
         [self.navigationController.view setBackgroundColor:[UIColor whiteColor]];
     }
-    //OTRAboutTableCellData *translateData = [OTRAboutTableCellData cellDataWithTitle:HELP_TRANSLATE_STRING() url:[NSURL otr_transifexURL]];
+    OTRAboutTableCellData *translateData = [OTRAboutTableCellData cellDataWithTitle:HELP_TRANSLATE_STRING() url:[NSURL otr_transifexURL]];
     OTRAboutTableCellData *aboutThisVersion = [OTRAboutTableCellData cellDataWithTitle:ABOUT_VERSION_STRING() url:nil];
-    self.cellData = @[aboutThisVersion];//,translateData];
+    self.cellData = @[aboutThisVersion]; //,translateData
     self.view.backgroundColor = [UIColor whiteColor];
     
     

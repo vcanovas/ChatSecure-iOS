@@ -50,6 +50,11 @@ open class OTRWelcomeViewController: UIViewController {
             createAccountVC.form = OTRXLFormCreator.form(for: OTRAccountType.jabber, createAccount: false)
             createAccountVC.loginHandler = OTRXMPPCreateAccountHandler()
         }
+        else{
+            let createAccountVC: OTRBaseLoginViewController = segue.destination as! OTRBaseLoginViewController
+            createAccountVC.form = OTRXLFormCreator.form(for: OTRAccountType.jabber, createAccount: false)
+            createAccountVC.loginHandler = OTRXMPPLoginHandler()
+        }
     }
     
     @IBAction func skipButtonPressed(_ sender: AnyObject) {

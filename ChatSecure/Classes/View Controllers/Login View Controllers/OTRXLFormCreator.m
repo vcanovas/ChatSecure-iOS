@@ -161,7 +161,7 @@ NSString *const kOTRXLFormUseTorTag               = @"kOTRXLFormUseTorTag";
         }
         
         [descriptor addFormSection:basicSection];
-        [descriptor addFormSection:advancedSection];
+        //[descriptor addFormSection:advancedSection];
     }
     return descriptor;
 }

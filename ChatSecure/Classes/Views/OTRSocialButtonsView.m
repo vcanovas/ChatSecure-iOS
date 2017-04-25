@@ -29,13 +29,16 @@ static CGFloat kOTRSocialTotalWidth = 300.0f;
     self = [super initWithFrame:frame];
     if (self) {
         self.translatesAutoresizingMaskIntoConstraints = NO;
-        UIFont *buttonFont = [UIFont systemFontOfSize:15];
         self.facebookButton = [[BButton alloc] initWithFrame:CGRectZero type:BButtonTypeFacebook style:BButtonStyleBootstrapV3];
         self.githubButton = [[BButton alloc] initWithFrame:CGRectZero type:BButtonTypeDefault style:BButtonStyleBootstrapV3];
         self.twitterButton = [[BButton alloc] initWithFrame:CGRectZero type:BButtonTypeTwitter style:BButtonStyleBootstrapV3];
         [self addSubview:self.facebookButton];
         [self addSubview:self.twitterButton];
         [self addSubview:self.githubButton];
+        
+        self.facebookButton.hidden=YES;
+        self.twitterButton.hidden=YES;
+        self.githubButton.hidden=YES;
     }
     return self;
 }

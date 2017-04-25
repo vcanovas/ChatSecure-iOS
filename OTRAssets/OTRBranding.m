@@ -95,7 +95,7 @@ static NSString *const GOOGLE_APP_SCOPE = @"GOOGLE_APP_SCOPE";
 
 /** The default XMPP resource (e.g. username@example.com/chatsecure) */
 + (NSString*) xmppResource {
-    return [[self defaultPlist] objectForKey:kOTRXMPPResource];
+    return @"notspy";//[[self defaultPlist] objectForKey:kOTRXMPPResource];
 }
 
 /** Email for user feedback e.g. support@chatsecure.org */

@@ -24,7 +24,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.chrisballinger.ChatSecure</string>
+			<string>com.notspy.chat</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>chatsecure</string>
@@ -39,7 +39,7 @@
 	<key>FacebookAppID</key>
 	<string>447241325394334</string>
 	<key>FacebookDisplayName</key>
-	<string>ChatSecure</string>
+	<string>NotSpy</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<true/>
 	<key>ITSEncryptionExportComplianceCode</key>

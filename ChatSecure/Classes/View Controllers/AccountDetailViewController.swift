@@ -78,11 +78,11 @@ public class AccountDetailViewController: UIViewController, UITableViewDelegate,
     }
     
     private func setupDetailCells() {
-        var serverInfoText = SERVER_INFORMATION_STRING()
-        if xmpp.serverCheck.getCombinedPushStatus() == .broken &&
+        //let serverInfoText = SERVER_INFORMATION_STRING()
+        /*if xmpp.serverCheck.getCombinedPushStatus() == .broken &&
            OTRBranding.shouldShowPushWarning() {
             serverInfoText = "\(serverInfoText)  ⚠️"
-        }
+        }*/
         detailCells = [
             DetailCellInfo(title: EDIT_ACCOUNT_STRING(), action: { [weak self] (_, _, sender) -> (Void) in
                 guard let strongSelf = self else { return }
@@ -91,11 +91,11 @@ public class AccountDetailViewController: UIViewController, UITableViewDelegate,
             DetailCellInfo(title: MANAGE_MY_KEYS(), action: { [weak self] (_, _, sender) -> (Void) in
                 guard let strongSelf = self else { return }
                 strongSelf.pushKeyManagementView(account: strongSelf.account, sender: sender)
-            }),
+            })/*,
             DetailCellInfo(title: serverInfoText, action: { [weak self] (_, _, sender) -> (Void) in
                 guard let strongSelf = self else { return }
                 strongSelf.pushServerInfoView(account: strongSelf.account, sender: sender)
-            })
+            })*/
         ]
     }
     

@@ -130,7 +130,7 @@ static NSUInteger kOTRMaxLoginAttempts = 5;
                     }];
                     
                     // If push isn't enabled, prompt to enable it
-                    if ([PushController getPushPreference] == PushPreferenceEnabled) {
+                    /*if ([PushController getPushPreference] == PushPreferenceEnabled) {
                         [strongSelf pushInviteViewController];
                     } else {
                         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Onboarding" bundle:[OTRAssets resourcesBundle]];
@@ -141,7 +141,8 @@ static NSUInteger kOTRMaxLoginAttempts = 5;
                         } else {
                             [strongSelf pushInviteViewController];
                         }
-                    }
+                    }*/
+                    [self dismissViewControllerAnimated:YES completion:nil];
                 }
         }];
     }

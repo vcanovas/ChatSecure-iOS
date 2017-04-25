@@ -849,7 +849,7 @@
 		639120921D8CA1E200F4100E /* OTROmemoStorageTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTROmemoStorageTest.swift; sourceTree = "<group>"; };
 		63917C3D1DFA20D900341D96 /* OTRModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTRModelTest.swift; sourceTree = "<group>"; };
 		63929C951C7D32D9008DB2E3 /* MessagesViewControllerState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewControllerState.swift; sourceTree = "<group>"; };
-		6396AF9A1A169D54009F3E6C /* ChatSecure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatSecure.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6396AF9A1A169D54009F3E6C /* NotSpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotSpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6396AF9E1A169D54009F3E6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6396AF9F1A169D54009F3E6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6396AFB31A169D54009F3E6C /* ChatSecureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatSecureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1635,7 +1635,7 @@
 		6396AF9B1A169D54009F3E6C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6396AF9A1A169D54009F3E6C /* ChatSecure.app */,
+				6396AF9A1A169D54009F3E6C /* NotSpy.app */,
 				6396AFB31A169D54009F3E6C /* ChatSecureTests.xctest */,
 				D9227C2A1BA7952100B5E1D0 /* ChatSecureCore.framework */,
 				D9AE3A0E1BA8CBFA00255537 /* OTRAssets.framework */,
@@ -2097,9 +2097,9 @@
 			productReference = 6365CEFC1E2453F6009E213F /* ChatSecureUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		6396AF991A169D54009F3E6C /* ChatSecure */ = {
+		6396AF991A169D54009F3E6C /* NotSpy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6396AFBD1A169D54009F3E6C /* Build configuration list for PBXNativeTarget "ChatSecure" */;
+			buildConfigurationList = 6396AFBD1A169D54009F3E6C /* Build configuration list for PBXNativeTarget "NotSpy" */;
 			buildPhases = (
 				26A8ED395C5418B361347335 /* [CP] Check Pods Manifest.lock */,
 				6396AF961A169D54009F3E6C /* Sources */,
@@ -2115,9 +2115,9 @@
 				D99F17901BAB9CD400604558 /* PBXTargetDependency */,
 				D9227C3E1BA7952100B5E1D0 /* PBXTargetDependency */,
 			);
-			name = ChatSecure;
+			name = NotSpy;
 			productName = ChatSecure;
-			productReference = 6396AF9A1A169D54009F3E6C /* ChatSecure.app */;
+			productReference = 6396AF9A1A169D54009F3E6C /* NotSpy.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6396AFB21A169D54009F3E6C /* ChatSecureTests */ = {
@@ -2262,7 +2262,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6396AF951A169D54009F3E6C /* Build configuration list for PBXProject "ChatSecure" */;
+			buildConfigurationList = 6396AF951A169D54009F3E6C /* Build configuration list for PBXProject "NotSpyChat" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -2305,7 +2305,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6396AF991A169D54009F3E6C /* ChatSecure */,
+				6396AF991A169D54009F3E6C /* NotSpy */,
 				6396AFB21A169D54009F3E6C /* ChatSecureTests */,
 				6365CEFB1E2453F6009E213F /* ChatSecureUITests */,
 				D9227C291BA7952100B5E1D0 /* ChatSecureCore */,
@@ -2820,12 +2820,12 @@
 		};
 		6365CF021E2453F6009E213F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6396AF991A169D54009F3E6C /* ChatSecure */;
+			target = 6396AF991A169D54009F3E6C /* NotSpy */;
 			targetProxy = 6365CF011E2453F6009E213F /* PBXContainerItemProxy */;
 		};
 		6396AFB51A169D54009F3E6C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6396AF991A169D54009F3E6C /* ChatSecure */;
+			target = 6396AF991A169D54009F3E6C /* NotSpy */;
 			targetProxy = 6396AFB41A169D54009F3E6C /* PBXContainerItemProxy */;
 		};
 		D9227C3E1BA7952100B5E1D0 /* PBXTargetDependency */ = {
@@ -3299,7 +3299,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6396AF951A169D54009F3E6C /* Build configuration list for PBXProject "ChatSecure" */ = {
+		6396AF951A169D54009F3E6C /* Build configuration list for PBXProject "NotSpyChat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6396AFBB1A169D54009F3E6C /* Debug */,
@@ -3308,7 +3308,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6396AFBD1A169D54009F3E6C /* Build configuration list for PBXNativeTarget "ChatSecure" */ = {
+		6396AFBD1A169D54009F3E6C /* Build configuration list for PBXNativeTarget "NotSpy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6396AFBE1A169D54009F3E6C /* Debug */,

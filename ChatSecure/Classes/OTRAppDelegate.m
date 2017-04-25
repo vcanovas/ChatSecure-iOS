@@ -28,7 +28,6 @@
 #import "OTRSettingsViewController.h"
 #import "OTRSettingsManager.h"
 
-@import Appirater;
 #import "OTRConstants.h"
 
 #import "OTRUtilities.h"
@@ -156,9 +155,9 @@
     OTRNotificationController *notificationController = [OTRNotificationController sharedInstance];
     [notificationController start];
     
-    if ([PushController getPushPreference] == PushPreferenceEnabled) {
+    /*if ([PushController getPushPreference] == PushPreferenceEnabled) {
         [PushController registerForPushNotifications];
-    }
+    }*/
   
     //[Appirater setAppId:@"464200063"];
     //[Appirater setOpenInAppStore:NO];
@@ -340,7 +339,7 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-    [Appirater appEnteredForeground:YES];
+    //[Appirater appEnteredForeground:YES];
     [self autoLoginFromBackground:NO];
 }
 

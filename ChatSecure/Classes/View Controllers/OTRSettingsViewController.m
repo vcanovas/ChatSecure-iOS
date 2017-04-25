@@ -178,9 +178,9 @@ static NSString *const circleImageName = @"31-circle-plus-large.png";
             
             if (xmpp.serverCheck.getCombinedPushStatus == ServerCheckPushStatusBroken) {
                 NSString *labelString = accountCell.accountNameLabel.text;
-                if ([OTRBranding shouldShowPushWarning]) {
+                /*if ([OTRBranding shouldShowPushWarning]) {
                     labelString = [labelString stringByAppendingString:@"  ⚠️"];
-                }
+                }*/
                 accountCell.accountNameLabel.text = labelString;
             }
             
